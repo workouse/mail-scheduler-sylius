@@ -1,0 +1,7 @@
+sylius_resource:
+  resources:
+    mail_scheduler_plugin.scheduler:
+      driver: doctrine/orm
+      classes:
+        model: Workouse\MailSchedulerPlugin\Entity\Scheduler
+        interface: Workouse\MailSchedulerPlugin\Entity\SchedulerInterface

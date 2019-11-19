@@ -1,1 +1,14 @@
 services:
+  mail_scheduler_plugin.mail_scheduler:
+    class: Workouse\MailSchedulerPlugin\Service\MailSchedulerService
+    arguments:
+      - '@mail_scheduler_plugin.factory.scheduler'
+      - '@sylius.email_provider'
+      - '@sylius.email_renderer.adapter'
+
+  mail_scheduler_plugin.listener.mail_scheduler:
+    class: Workouse\MailSchedulerPlugin\EventListener\MailSchedulerListener
+    arguments:
+      - '@mail_scheduler_plugin.mail_scheduler'
+    tags:
+      - { name: kernel.event_listener, event: sylius.customer.post_register, method: run }
