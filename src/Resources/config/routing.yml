@@ -1,0 +1,9 @@
+mail_scheduler_plugin_shop:
+  resource: "@WorkouseMailSchedulerPlugin/Resources/config/shop_routing.yml"
+  prefix: /{_locale}
+  requirements:
+    _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+mail_scheduler_plugin_admin:
+  resource: "@WorkouseMailSchedulerPlugin/Resources/config/admin_routing.yml"
+  prefix: /admin

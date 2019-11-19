@@ -1,0 +1,2 @@
+mail_scheduler_plugin:
+    resource: "@WorkouseMailSchedulerPlugin/Resources/config/routing.yml"
